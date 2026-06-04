@@ -760,12 +760,13 @@ export default function VideoEditor() {
               className={cn(
                 "w-full flex items-center justify-center gap-3 py-5 min-h-[44px] rounded-xl",
                "font-display text-xl md:text-2xl tracking-widest transition-all duration-200",
+               file && status === "idle" && "motion-safe:animate-pulse",
                 file && !isProcessing
                   ? "bg-[var(--accent)] hover:bg-[var(--accent-hover)] hover:scale-[1.02] text-white shadow-[var(--shadow)] active:scale-[0.98] cursor-pointer"
                   : "bg-[var(--border)] text-[var(--muted)] cursor-not-allowed"
               )}
             >
-             <Zap size={20} className={cn(file && !isProcessing && "animate-pulse")} />
+             <Zap size={20} />
               {isProcessing ? "PROCESSING" : "EXPORT"}
             </button>
 
